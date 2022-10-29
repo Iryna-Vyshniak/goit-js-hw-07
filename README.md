@@ -1,9 +1,6 @@
 ### goit-js-hw-07
 ## JavaScript course homework. Document Object Model. Event propagation. Event bubbling. Throttle &amp; Debounce. Lazysizes
 
-**Read in other languages: [Русский](README.md), [Українська](README.ua.md),
-[English](README.en.md), [Español](README.es.md), [Polski](README.pl.md).**
-
 # Критерії приймання
 
 - Створено репозиторій `goit-js-hw-07`.
