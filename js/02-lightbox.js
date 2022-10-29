@@ -20,9 +20,13 @@ function createGalleryItemsMarkup(items) {
     }).join('');
 }
 
+/*
 var lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt', captionDelay: 250
-
+    captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250
+});
+*/
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250
 });
 
 console.log(galleryItems);
