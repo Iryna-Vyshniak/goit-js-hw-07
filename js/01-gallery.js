@@ -48,8 +48,8 @@ function onImgClickCreateModal(e) {
                 window.removeEventListener("keydown", onEscKeyPress);
             },
         }
-    ).show();
-    // instance.show();
+    );
+    instance.show();
 
     function onEscKeyPress(event) {
         const ESC_KEY_CODE = 'Escape';
