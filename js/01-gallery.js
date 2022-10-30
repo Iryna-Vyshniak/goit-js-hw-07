@@ -8,8 +8,8 @@ galleryContainer.addEventListener('click', onImgClickCreateModal);
 
 // rendered items
 function createGalleryItemsMarkup(items) {
-    return items.map(({ preview, original, description }) => {
-        return `<div class="gallery__item">
+  return items.map(({ preview, original, description }) => {
+    return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -19,46 +19,45 @@ function createGalleryItemsMarkup(items) {
     />
   </a>
 </div>`
-    }).join('');
+  }).join('');
 }
 
 // create modal
 function onImgClickCreateModal(e) {
-    e.preventDefault();
-    // if (e.target.nodeName !== "IMG") {return;}
+  e.preventDefault();
+  // if (e.target.nodeName !== "IMG") {return;}
 
-    const isItemImage = e.target.classList.contains("gallery__image");
-    if (!isItemImage) {
-        return;
-    }
+  const isItemImage = e.target.classList.contains("gallery__image");
+  if (!isItemImage) {
+    return;
+  }
 
-    const currentImgUrl = e.target.dataset.source;
+  const currentImgUrl = e.target.dataset.source;
 
-    const instance = basicLightbox.create(
-        `
+  const instance = basicLightbox.create(
+    `
 		<img src="${currentImgUrl}" width="1280" height="auto"/>
         `,
-        {
-            onShow: (instance) => {
-                window.addEventListener("keydown", onEscKeyPress);
-            },
-            onClose: (instance) => {
-                window.removeEventListener("keydown", onEscKeyPress);
-            },
-        }
-    );
-    instance.show();
-
-    function onEscKeyPress(e) {
-        const ESC_KEY_CODE = 'Escape';
-        const isEscKey = e.code === ESC_KEY_CODE;
-        if (isEscKey) {
-            instance.close();
-        }
+    {
+      onShow: (instance) => {
+        window.addEventListener("keydown", onEscKeyPress);
+      },
+      onClose: (instance) => {
+        window.removeEventListener("keydown", onEscKeyPress);
+      },
     }
+  );
+  instance.show();
+
+  function onEscKeyPress(e) {
+    const ESC_KEY_CODE = 'Escape';
+    const isEscKey = e.code === ESC_KEY_CODE;
+    if (isEscKey) {
+      instance.close();
+    }
+  }
 }
 
-console.log(galleryItems);
 
 /*
 const instance = basicLightbox.create(`
